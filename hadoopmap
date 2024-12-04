@@ -1,0 +1,19 @@
+
+Step 1: Download MapReduceClient.jar
+https://github.com/MuhammadBilalYar/HADOOP-INSTALLATION-ON- WINDOW10/blob/master/MapReduceClient.jar
+Step 2: Download Input_file.txt
+https://github.com/MuhammadBilalYar/HADOOP-INSTALLATION-ON- WINDOW10/blob/master/input_file.txt
+Place both files in “C:/”
+Step 3: Open cmd in Administrative mode and move to “C:/Hadoop-2.8.0/sbin” and start cluster
+Start-all.cmd
+Step 4: Create an input directory in HDFS hadoop fs -mkdir /input_dir
+Step 5: Copy the input text file named input_file.txt in the input directory (input_dir) of HDFS
+hadoop fs -put C:/input_file.txt /input_dir
+Step 6: Verify input_file.txt available in HDFS input directory (input_dir) hadoop fs -ls /input_dir/
+Step 7: Verify content of the copied file hadoop dfs -cat /input_dir/input_file.txt
+Step 8: Run MapReduceClient.jar and also provide input and out directories hadoop jar C:/MapReduceClient.jar wordcount /input_dir /output_dir
+Step 9: Verify content for generated output file Some Other useful commands in hadoop:
+To leave Safe mode
+hadoop dfsadmin –safemode leave To delete file from HDFS directory
+Use Apache Hadoop write a word count program to demonstrate the use of Map and Reduce tasks
+hadoop fs -rm -r /iutput_dir/input_file.txt To delete directory from HDFS directory hadoop fs -rm -r /iutput_dir
